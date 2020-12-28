@@ -2,6 +2,23 @@
     "name": "docker-php/docker-php",
     "license": "MIT",
     "type": "library",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "docker-php/docker-php-api",
+                "version": "4.1.36",
+                "source": {
+                    "url": "https://github.com/proghub-official/docker-php-api.git",
+                    "type": "git",
+                    "reference": "4.1.36"
+                },
+                "autoload": {
+                    "classmap": [""]
+                }
+            }
+        }
+    ],
     "description": "A Docker PHP client",
     "autoload": {
         "psr-4": {
@@ -14,14 +31,14 @@
         }
     },
     "require": {
-        "php": ">=7.1",
-        "docker-php/docker-php-api": "4.1.*",
+        "php": ">=7.2",
+        "docker-php/docker-php-api": "4.1.36",
         "guzzlehttp/psr7": "^1.2",
         "php-http/client-common": "^1.6",
         "php-http/socket-client": "^1.3",
         "php-http/message": "^1.0",
         "symfony/filesystem": "^2.3 || ^3.0 || ^4.0",
-        "symfony/process": "^2.3 || ^3.0 || ^4.0"
+        "symfony/process": "^5.0"
     },
     "suggest": {
         "php-http/httplug-bundle": "For integration with Symfony",
@@ -29,7 +46,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
-        "friendsofphp/php-cs-fixer": "2.8.1",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "amphp/artax": "^3.0",
         "amphp/socket": "^0.10.5"
     },
